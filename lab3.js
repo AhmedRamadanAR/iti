@@ -19,17 +19,25 @@ class Employee {
     }
 }
 class Manager extends Employee {
+    constructor(name, age, salary) {
+        super(name, age, salary); 
+    }
     showInformation() {
         console.log("I'm " + this.name + ", a manager in the company")
     }
 }
 class Developer extends Employee {
-
+    constructor(name, age, salary) {
+        super(name, age, salary); 
+    }
     showInformation() {
         console.log("I'm" + this.name + " Developer in the company")
     }
 }
 class Intern extends Employee {
+    constructor(name, age, salary) {
+        super(name, age, salary); 
+    }
     showInformation() {
         console.log("I'm" + this.name + " intern in the company")
     }
@@ -37,7 +45,10 @@ class Intern extends Employee {
 
 const emp1 = new Employee("Ahmed", 23, 250000);
 const emp2 = new Manager("Ahmed", 21, 900000);
-emp1.showInformation()
+const emp3 = new Developer("maged", 26, 300000);
+const emp4 = new Intern("Omar", 22, 100000);
+emp1.showInformation();
+emp4.showInformation();
 
 emp1.setsalary(30000);
 console.log(emp1.getSalary());
