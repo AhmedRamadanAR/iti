@@ -1,3 +1,5 @@
+import ContactMeButton from './ContactMeButton'; 
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -6,7 +8,7 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 export default function Footer() {
     return (
 
-        <div className="container-fluid">
+        <div  id="footer" className=" container-fluid">
 
             <div className='row bg-dark'>
                 <div className='col-md-4 my-3 '>
@@ -20,13 +22,7 @@ export default function Footer() {
                 </div>
 
                 <div className='col-md-6 d-flex justify-content-center align-items-center'>
-
-                    <button className='btn btn-outline-secondary  text-white w-50'
-                        type="button"
-
-                    >
-                        Contact ME
-                    </button>
+               <ContactMeButton link="mailto:ahmedramadan8050@gmail.com" ></ContactMeButton>
 
                 </div>
 
