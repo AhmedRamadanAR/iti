@@ -10,13 +10,13 @@ export default function Footer() {
 
         <div  id="footer" className=" container-fluid">
 
-            <div className='row bg-dark'>
-                <div className='col-md-4 my-3 '>
+            <div className='row bg-dark '>
+                <div className='col-md-4 my-3  px-4 '>
                     <h1 className='display-6  fw-bold text-white justify'>GET IN TOUCH</h1>
                     <br />
                     <div className='text-white'>
-                        <p><FontAwesomeIcon icon={faEnvelope} /> email@example.com</p>
-                        <p><FontAwesomeIcon icon={faPhone} /> +20 123 456 7890</p>
+                        <p><FontAwesomeIcon icon={faEnvelope} /> ahmedramadan8050@gmail.com</p>
+                        <p><FontAwesomeIcon icon={faPhone} /> +20 1025659292</p>
                     </div>
 
                 </div>
@@ -26,7 +26,7 @@ export default function Footer() {
 
                 </div>
 
-                <div className='col-md-2  my-3 '>
+                <div className='col-md-2  my-3 px-3 '>
                     <a className='text-white m-2 ' href="https://www.linkedin.com/in/ahmedramdan/" target="_blank" >
                         <FontAwesomeIcon icon={faLinkedin}  size="2x" />
 

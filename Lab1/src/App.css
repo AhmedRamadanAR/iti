@@ -5,6 +5,7 @@
   width: 100%;
 }
 .App {
+  
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align content at the top */
