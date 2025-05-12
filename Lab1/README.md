@@ -1,4 +1,4 @@
-![Demo](./src/assets/demo.gif)
+![Demo](./src/assets/portfolio.gif)
 
 
 
