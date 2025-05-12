@@ -4,8 +4,11 @@ export  default function Skills(){
         <>
 <div className="container-fluid bg-dark text-white text-center py-5">
   <div className="row justify-content-center ">
+    <div className="col-md-8">
+
             <h1>Skills</h1>
             <p className="px-5 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem fugit ducimus assumenda nisi aspernatur, repellat debitis nesciunt, ipsam tenetur provident, laborum vel qui molestias minima consectetur rerum unde similique porro!</p>
+</div>
    </div>
     <div className="row justify-content-center ">
             <div className="col-md-4">
