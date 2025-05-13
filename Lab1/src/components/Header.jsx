@@ -1,3 +1,4 @@
+import programmer from '../assets/programmer.svg';
 
 import './Header.css';
 import ContactMeButton from './ContactMeButton'; 
@@ -17,7 +18,7 @@ export default function Header() {
 
                 </div>
                 <div className="col-md-4">
-                    <img src="./src/assets/programmer.svg" alt="computer"   className="img-fluid w-70"
+                    <img src={programmer} alt="programmer"   className="img-fluid w-70"
  />
                 </div>
                 </div>
