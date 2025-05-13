@@ -1,6 +1,5 @@
 
-👉 [View the live website]([https://your-vercel-project.vercel.app](https://iti11.vercel.app/))
-
+👉 [View the live website](https://iti11.vercel.app/)
 
 ![Demo](./src/assets/portfolio.gif)
 
