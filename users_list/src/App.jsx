@@ -2,17 +2,14 @@
 import './App.css'
 import Header from './components/Header'
 
-import Searchbar from './components/Searchbar'
+import SearchUsers from './components/SearchUsers'
 import CustomCard from './components/Card'
-import Users from './components/Users'
 function App() {
 
   return (
     <>
          <Header/>
-         <Users/>
-     <Searchbar/>
-     <CustomCard/>
+     <SearchUsers/>
     </>
   )
 }

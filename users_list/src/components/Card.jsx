@@ -1,28 +1,43 @@
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 
-export default function CustomCard() {
+export default function CustomCard(props) {
     return (
         <Card style={{border: '1px solid #007bff', 
-                borderRadius:'40px', width: '18rem' }} className="text-center " >
+                borderRadius:'40px', width: '18rem' }} className="text-center bg-light m-5" >
             <Card.Body>
                 <div className="d-flex justify-content-center mb-3 ">
                     <Card.Img
                         variant="top"
-                        src="https://dummyjson.com/icon/emilys/128"  
+                        src={props.image}
                         style={{
                             width: '100px',
                             height: '100px',
-                        
+                    
                             borderRadius: '60px',
                             border: '2px solid #007bff',
                         }}
                     />
                 </div>
-                <Card.Title className='bg-danger w-50 mx-auto d-flex justify-content-center'>Card Title</Card.Title>
+                {
+              props.role === "admin" ? (
+                <Card.Title className='bg-danger w-50 mx-auto d-flex justify-content-center'>{props.role}</Card.Title>
+) : props.role === "user" ? (
+                <Card.Title className='bg-primary w-50 mx-auto d-flex justify-content-center'>{props.role}</Card.Title>
+) : props.role === "moderator" ? (
+                <Card.Title className='bg-warning w-50 mx-auto d-flex justify-content-center'>{props.role}</Card.Title>
+) : null}
+
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                 {props.username}
+                    <br/>
+                      {props.email}
+                                          <br/>
+
+                     {props.phone}
+                                         <br/>
+
+                   {props.birthDate}
+
                 </Card.Text>
             </Card.Body>
         </Card>
