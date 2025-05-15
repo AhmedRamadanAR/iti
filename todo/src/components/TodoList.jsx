@@ -1,6 +1,6 @@
 import { TodoTask } from "./TodoTask";
 
-export function TodoList({handleOnDeleteClick,tasks,onCompleteClick,isComplete}){
+export function TodoList({handleOnDeleteClick,tasks,onCompleteClick}){
 console.log()
     return(
         <>
@@ -15,9 +15,8 @@ console.log()
            tasks.map((task)=>(
             <TodoTask key={task.id} 
             onDeleteClick={()=>handleOnDeleteClick(task.id)} 
-            Task={task}
-            onCompleteClick={onCompleteClick}
-            isComplete={isComplete}
+            task={task}
+            onCompleteClick={()=>onCompleteClick(task.id)}
             />
 
            ))

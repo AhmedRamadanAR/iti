@@ -5,11 +5,15 @@ import { TodoList } from './TodoList';
 export function Todo() {
   const [tasks, setTasks] = useState([]);
   const [taskText, setTaskText] = useState(''); 
-  const [completeBtn, setCompleteBtn] = useState(false);
 
-       function onCompleteClick() {
-        setCompleteBtn(!completeBtn)
-    }
+  const onCompleteClick = (taskId) => {
+  const updatedTasks = tasks.map(task =>
+    task.id === taskId ? 
+    { ...task, completed: !task.completed } : task
+  );
+  setTasks(updatedTasks);
+};
+
 
     const onAddClick = () => {
         if (taskText) {
@@ -36,7 +40,7 @@ const handleOnDeleteClick = (removedTaskId) => {
         <>
             <div className=" m-3">
                 <Header onAddClick={onAddClick} taskText={taskText} setTaskText={setTaskText} />
-                <TodoList handleOnDeleteClick={handleOnDeleteClick} tasks={tasks} onCompleteClick={onCompleteClick} isComplete={completeBtn}/>
+                <TodoList handleOnDeleteClick={handleOnDeleteClick} tasks={tasks} onCompleteClick={onCompleteClick}/>
             </div>
         </>
     );
