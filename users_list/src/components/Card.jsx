@@ -7,7 +7,6 @@ export default function CustomCard(props) {
             <Card.Body>
                 <div className="d-flex justify-content-center mb-3 ">
                     <Card.Img
-                        variant="top"
                         src={props.image}
                         style={{
                             width: '100px',
