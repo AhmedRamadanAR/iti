@@ -20,7 +20,7 @@ export default function SearchUsers(){
         setCardsState(requiredCards)
     }
     const filteredCards = cardsState.map(cardItem => { 
-  return <div className="col-md-6" key={cardItem.id}> {}
+  return <div className="col" key={cardItem.id}> {}
             <CustomCard {...cardItem}/>
         </div>;
   //  return <CustomCard cardItem={cardItem}/>;
