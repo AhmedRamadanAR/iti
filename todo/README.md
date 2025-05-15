@@ -1,5 +1,5 @@
 
-👉 [View the live website](https://todo-app-react-six-alpha.vercel.app/)
+👉 [View the live website](https://todo-react-app-coral.vercel.app/)
 
 # React + Vite
 
