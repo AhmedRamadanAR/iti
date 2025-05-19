@@ -6,15 +6,17 @@ import Rating from "../components/Rating";
 
 export default function ProductDetails() {
     const params = useParams();
-    const [itemCount, setItemCount] = useState(1)
-    const [productDetails, setProductDetails] = useState(null)
+    const [productDetails, setProductDetails] = useState(null)  
+      const [itemCount, setItemCount] = useState(1)
+
     const itemCountOperation = (operation) => {
         setItemCount(count => {
             if (operation === "+") {
 
                 return Math.min(count + 1, productDetails?.stock);
             } else {
-                return Math.max(1, count - 1);
+                   
+                return productDetails.stock > 0 ? Math.max(1, count - 1) : Math.max(0, count - 1);
             }
         }
 
@@ -23,13 +25,22 @@ export default function ProductDetails() {
     }
 
     const getProductDetails = async () => {
-        try {
-            const product = await axiosInstance.get(`/products/${params.id}`)
-            setProductDetails(product.data)
-        } catch (error) {
+     
+    try {
+        const product = await axiosInstance.get(`/products/${params.id}`);
+        setProductDetails(product.data);
 
+        if (product.data.stock === 0) {
+            setItemCount(0);
+        } else {
+            setItemCount(1);
         }
+    } catch (error) {
+        console.error("Failed to fetch product details", error);
     }
+};
+
+  
     useEffect(() => {
         getProductDetails()
     }, [params.id]
@@ -58,14 +69,15 @@ export default function ProductDetails() {
                             <h3 className=" pt-3" >${productDetails?.price} or {Math.round(productDetails?.price / 6)}/month  </h3>
                             <p className="text-muted pb-3">Suggested payments with 6 months special financing</p>
                             <hr />
-                            <Badge bg="success" className="mb-3">In stock</Badge>
+                            <Badge className={`mb-3 ${productDetails.stock > 0 ? 'bg-success' : 'bg-danger'
+            } `}>{productDetails?.availabilityStatus}</Badge>
 
                             <div className="mb-4">
                                 <Button variant="outline-secondary" size="sm" className="me-2 rounded-pill">{productDetails.category}</Button>
                                 <Button variant="outline-secondary" size="sm" className="rounded-pill">{productDetails.brand}</Button>
                             </div>
                             <hr />
-                            <div className="d-flex justify-content-cennter">
+                            <div>
                                 <ButtonGroup size="lg" className="mb-2">
                                     <Button variant="outline-secondary" onClick={() => itemCountOperation("-")}>−</Button>
                                     <Button variant="outline-secondary">{itemCount}</Button>
@@ -76,12 +88,17 @@ export default function ProductDetails() {
 
                             </div>
                             <div className="d-flex gap-4 mt-4">
-                                <Button className="rounded-pill text-white w-50" variant="success">
+                                {productDetails.stock >0 &&
+                                <>
+                                   <Button className="rounded-pill text-white w-50" variant="success">
                                     Buy Now
                                 </Button>
-                                <Button className="rounded-pill text-white w-50" variant="success">
+                               <Button className="rounded-pill text-white w-50" variant="success">
                                     Add to Cart
                                 </Button>
+                                </>
+                                 }
+                            
                             </div>
 
 

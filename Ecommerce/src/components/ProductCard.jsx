@@ -27,7 +27,7 @@ export default function ProductCard({ thumbnail, title, description, rate, price
 
 
         <Card.Img variant="top" src={thumbnail} />
-        <Card.Body   >
+        <Card.Body className='d-flex flex-column'  >
           <div className=" d-flex  justify-content-between">
             <Card.Title className="mb-3  " style={{ maxWidth: '100%'}}>{title}</Card.Title>
             <Card.Title className="mb-3 px-1 text-nowrap" > {"$" + price}<sup>.00</sup>
@@ -36,7 +36,7 @@ export default function ProductCard({ thumbnail, title, description, rate, price
 
           </div>
 
-          <Card.Text className='text-secondary   pb-3'       style={{ maxHeight: '100%' }}  // adjust based on design
+          <Card.Text className='text-secondary   pb-3 flex-grow-1' 
 >
             {description}
           </Card.Text>
@@ -46,7 +46,7 @@ export default function ProductCard({ thumbnail, title, description, rate, price
           </Card.Text>
           
             <Button variant="outline-dark"   disabled={stock <= 0}
- className='rounded-pill' onClick={(e)=>{handleAddToCart(e)}}>Add to Cart</Button> 
+ className='rounded-pill mt-auto' onClick={(e)=>{handleAddToCart(e)}}>Add to Cart</Button> 
     
           
         </Card.Body>
