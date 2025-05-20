@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 export function Header({onAddClick,taskText,setTaskText}) {
-    const [task, setTask] = useState("");
-
+//state- component level
+//if to child - props data information
+//state mutable 
+//props imutable
     return (
         <>
             <div className="container-fluid   bg-primary  p-5">

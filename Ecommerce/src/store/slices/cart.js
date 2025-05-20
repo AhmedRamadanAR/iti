@@ -37,6 +37,16 @@ import { createSlice } from "@reduxjs/toolkit"
     }
   
   },
+   incrementQuantityByValue:(state,action)=>{
+        const {id,IncrementValue}=action.payload;
+
+    const item=state.items.find(item=>item.id===id)
+    if(item){
+    state.totalCount+=IncrementValue;
+    item.quantity+=IncrementValue;
+    }
+  
+  },
   decrementQuantity:(state,action)=>{
         const id=action.payload;
 
@@ -49,5 +59,5 @@ import { createSlice } from "@reduxjs/toolkit"
  }
 });
 
-export const{addToCart,removeFromCart,incrementQuantity,decrementQuantity}=cartSlice.actions;
+export const{addToCart,removeFromCart,incrementQuantity,decrementQuantity,incrementQuantityByValue}=cartSlice.actions;
 export default cartSlice.reducer;

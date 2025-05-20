@@ -32,7 +32,7 @@ function Cart() {
         <tbody>
           {cartItems.map(item => (
             <tr key={item.id}>
-              <td><img src={item.thumbnail} alt="" width="60" /></td>
+              <td><img src={item.thumbnail} alt="" width="100" height="100" /></td>
               <td>{item.title}</td>
               <td>
                 <QuantityControl onAddClick={()=>{dispatch(incrementQuantity(item.id))}} onMinusClick={()=>{dispatch(decrementQuantity(item.id))}} itemCount={item.quantity} />
@@ -44,7 +44,7 @@ function Cart() {
           ))}
         </tbody>
       </table>
-      <h4>Total: £{total.toFixed(2)}</h4>
+      <h4>Total: £{total.toFixed(0)}</h4>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { TodoList } from './TodoList';
 export function Todo() {
   const [tasks, setTasks] = useState([]);
   const [taskText, setTaskText] = useState(''); 
-
+//context-redux-state
   const onCompleteClick = (taskId) => {
   const updatedTasks = tasks.map(task =>
     task.id === taskId ? 

@@ -6,10 +6,11 @@ import Rating from "../components/Rating";
 import { useDispatch } from 'react-redux';
 
 import QuantityControl from "../components/QuantityControl"
-import { addToCart } from "../store/slices/cart";
+import { addToCart, incrementQuantityByValue } from "../store/slices/cart";
 export default function ProductDetails() {
     const params = useParams();
-    const dispatch =useDispatch();
+    const dispatch = useDispatch();
+
     const [productDetails, setProductDetails] = useState(null)
     const [itemCount, setItemCount] = useState(1)
 
@@ -83,7 +84,9 @@ export default function ProductDetails() {
                             <hr />
                             <div>
                                 <QuantityControl
-                                    onAddClick={() => itemCountOperation("+")}
+                                    onAddClick={() => {
+                                        itemCountOperation("+")
+                                    }}
                                     onMinusClick={() => itemCountOperation("-")}
                                     itemCount={itemCount}
                                 />
@@ -97,15 +100,18 @@ export default function ProductDetails() {
                                         <Button className="rounded-pill text-white w-50" variant="success">
                                             Buy Now
                                         </Button>
-                                        <Button onClick={() => {
-                                            dispatch(addToCart(productDetails))
-                                            alert("Added to the cart"
-                                            )
-                                        }}
-
-                                            className="rounded-pill text-white w-50" variant="success">
+                                        <Button
+                                            onClick={() => {
+                                                dispatch(addToCart(productDetails));
+                                                dispatch(incrementQuantityByValue({ id: productDetails.id, IncrementValue: itemCount - 1 }));
+                                                alert("Added to the cart");
+                                            }}
+                                            className="rounded-pill text-white w-50"
+                                            variant="success"
+                                        >
                                             Add to Cart
                                         </Button>
+
                                     </>
                                 }
 

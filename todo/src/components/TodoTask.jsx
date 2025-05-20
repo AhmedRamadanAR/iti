@@ -5,8 +5,8 @@ export function TodoTask({ onDeleteClick, task, onCompleteClick }) {
 
         <>
             <div className="card">
-                <div className="card-body d-flex">
-                    <p className="mx-2 flex-grow-1 me-5">
+                <div className="card-body d-flex ">
+                    <p className="mx-2 flex-grow-1 me-5 ">
 
                         {task.completed ? <del> {task.text}</del> :
                             task.text

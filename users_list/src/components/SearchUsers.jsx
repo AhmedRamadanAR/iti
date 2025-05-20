@@ -45,7 +45,9 @@ export default function SearchUsers(){
 
 <div className="container">
     <div className="row justify-content-center">
-        <div className="col-md-8 ml-8 ms-8">
+            {/* dir rtl rlt */}
+
+        <div className="col-md-8 col-12 ms-8">
                 <div className="input-group">
                     <input className="form-control form-control-lg"
                      type="search"

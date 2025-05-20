@@ -29,7 +29,7 @@ export default function ProductsList() {
                         return (
                             <div key={product.id} className="col-lg-3 col-md-6 col-12  mb-2" >
  
-                                <ProductCard thumbnail={product.thumbnail} title={product.title} description={product.description} rate={product.rating} price={product.price} availability={product.availabilityStatus} stock={product.stock} productId={product.id} />
+                                <ProductCard  product={product} />
                             </div>
 
                         );
