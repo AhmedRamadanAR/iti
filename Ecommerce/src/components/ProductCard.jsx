@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router'
     import { addToCart } from "../store/slices/cart";
   
 export default function ProductCard({ product}) {
-       const navigate= useNavigate();
+   const navigate= useNavigate();
   
   const hanndleNavigateToDetails=(productId)=>{
     navigate(`/product-details/${productId}`)
