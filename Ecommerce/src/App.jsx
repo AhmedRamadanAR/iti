@@ -1,6 +1,6 @@
 import { useEffect, useState ,lazy, Suspense} from 'react';
 import LanguageContext from "./context/language";
-import { BrowserRouter, Route, Routes} from 'react-router';  // نصيحة: استبدل 'react-router' بـ 'react-router-dom'
+import { BrowserRouter, Route, Routes} from 'react-router';  
 import Header from './components/Header';
 
 const ProductsList=lazy(()=>import("./pages/ProductsList"));
