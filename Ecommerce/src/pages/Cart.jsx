@@ -1,4 +1,4 @@
-import { incrementQuantity, decrementQuantity, removeFromCart,addToCart } from '../store/slices/cart';
+import { incrementQuantity, decrementQuantity, removeFromCart } from '../store/slices/cart';
 import QuantityControl from "../components/QuantityControl"
 import { useDispatch,useSelector } from 'react-redux';
 
@@ -38,7 +38,7 @@ function Cart() {
                 <QuantityControl onAddClick={()=>{dispatch(incrementQuantity(item.id))}} onMinusClick={()=>{dispatch(decrementQuantity(item.id))}} itemCount={item.quantity} />
              
               </td>
-              <td><button className="btn btn-danger btn-sm" onClick={() =>{removeFromCart(item.id)}}>x</button></td>
+              <td><button className="btn btn-danger btn-sm" onClick={() =>{dispatch(removeFromCart(item.id))}}>x</button></td>
               <td>£{Math.floor(item.price * item.quantity)}</td>
             </tr>
           ))}
