@@ -44,7 +44,10 @@ function Cart() {
           ))}
         </tbody>
       </table>
+      <div className='d-flex justify-content-end ms-2'>
       <h4>Total: £{total.toFixed(0)}</h4>
+
+      </div>
     </div>
   );
 }
