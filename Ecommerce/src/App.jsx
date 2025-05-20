@@ -5,7 +5,7 @@ import Header from './components/Header'
 import ProductsList from './pages/ProductsList'
 import NotFound from './pages/NotFound'
 import ProductDetails from './pages/ProductDetails'
-import ProductCard from './components/ProductCard'
+import Cart from './pages/Cart'
 function App() {
 
   return (
@@ -18,6 +18,8 @@ function App() {
             <Routes>
               <Route path="/" element={<ProductsList />}/>
               <Route path="product-details/:id" element={<ProductDetails/>} />
+                <Route path="/cart" element={<Cart />} />
+
 
               <Route path="*" element={<NotFound />} />
             </Routes>

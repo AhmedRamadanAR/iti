@@ -1,7 +1,9 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import {Link,NavLink} from 'react-router'
+ import {  useSelector } from 'react-redux';
 
 export default function Header() {
+ const itemsInCart=useSelector(state=> state.cart.totalCount)
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid className="p-2"> 
@@ -17,10 +19,10 @@ export default function Header() {
           <Nav className="ms-auto px-2">
             <Nav.Link as={Link} to="#">Login</Nav.Link>
             <Nav.Link as={Link} to="#">Signup</Nav.Link>
-            <Nav.Link as={Link} to="#" className="position-relative">
+            <Nav.Link as={Link} to="/cart" className="position-relative">
               <i className="bi bi-cart-fill fs-5"></i>
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
-                3
+                {itemsInCart}
               </span>
             </Nav.Link>
           </Nav>
